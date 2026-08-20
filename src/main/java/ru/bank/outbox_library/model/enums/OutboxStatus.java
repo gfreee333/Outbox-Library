@@ -1,0 +1,10 @@
+package ru.bank.outbox_library.model.enums;
+
+public enum OutboxStatus {
+
+    PENDING, SENT, PROCESSING, DEAD;
+
+    public boolean isTerminal() {
+        return this.equals(SENT) || this.equals(DEAD);
+    }
+}
